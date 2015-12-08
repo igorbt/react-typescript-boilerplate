@@ -5,7 +5,7 @@ var APP_DIR = path.join(__dirname, '..', 'app');
 
 module.exports = {
   debug: true,
-  devtool: 'eval',
+  devtool: 'inline-source-map',
   entry: ['webpack-hot-middleware/client', './app/index.tsx'],
   module: {
     preLoaders: [{
@@ -15,7 +15,7 @@ module.exports = {
     }],
     loaders: [{
       test: /\.tsx?$/,
-      loaders: ['babel', 'ts'],
+      loaders: ['react-hot', 'ts'],
       include: APP_DIR
     }]
   },
